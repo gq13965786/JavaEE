@@ -5,7 +5,7 @@ public class SomebaseImpl implements Isomebase {
 
 	@Override
 	public String dostring() {
-		return "abcd";
+		return "   abcd   ";
 	}
 
 }
