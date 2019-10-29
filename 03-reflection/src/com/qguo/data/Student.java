@@ -9,19 +9,28 @@ public class Student {
 		private void privatemethod() {
 			System.out.println("private medthod can not acess");
 		}
-		
+		private static void paraPrivate(int num, String s) {
+			System.out.println("private methond with int:" + num + " String:" + s);
+			
+		}
 		public Student(String name, Integer id, int score) {
 			super();
 			this.name = name;
 			this.id = id;
 			this.score = score;
-			System.out.println("field has been set");
+			System.out.println("constructor field has been set");
+		}
+		public Student(Student student) {
+			this.name = student.name;
+			this.id = student.id;
+			this.score = student.score;
+			this.toString();
+			System.out.print(":student instance has been copy from parameter" + "\n\n");
 		}
 		public Student() {
 			super();
 			
 			System.out.println("constructor has been reach");
-			// TODO Auto-generated constructor stub
 		}
 		public String getName() {
 			return name;
