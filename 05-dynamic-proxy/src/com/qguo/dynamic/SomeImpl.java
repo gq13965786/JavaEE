@@ -4,7 +4,7 @@ public class SomeImpl implements ISome {
 	
 	public String dostring() {
 		System.out.println("dostring is impl");
-		return "return";
+		return "abcd";
 	}
 	
 	public void otherthan() {
