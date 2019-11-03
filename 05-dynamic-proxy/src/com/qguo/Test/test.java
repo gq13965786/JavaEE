@@ -4,7 +4,9 @@ import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
+import com.qguo.cglibimpl.MyCglibFactory;
 import com.qguo.dynamic.ISome;
+import com.qguo.dynamic.Some;
 import com.qguo.dynamic.SomeImpl;
 
 public class Test {
@@ -47,6 +49,11 @@ public class Test {
 		System.out.println("----cglib dynamic proxy----");
 		//cglib 实现动态代理
 		//要求目标对象增强用的是继承关系,增强对象不能是final类
+		Some newTarget = new MyCglibFactory().myCglibCreator();
+		String another = other.dostring();
+		System.out.println(another);
+		
+		
 	}
 
 }
