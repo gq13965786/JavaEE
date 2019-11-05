@@ -3,7 +3,12 @@ package com.qguo.test;
 import org.omg.SendingContext.RunTime;
 
 public class Test {
-
+	public native static void hellnative();
+	
+	//static {
+	//	system.loadlibrary("*.dll");
+	//}
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		//String home = System.getenv("JAVA_HOME")+"/jre/bin/server/jvm.dll";replace / to \
@@ -19,5 +24,5 @@ public class Test {
 		System.out.println(number);
 	}
 	
-	public native static void hellnative();
+
 }
