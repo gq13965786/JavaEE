@@ -1,12 +1,11 @@
-java native,javassit 
+java native,javassit
 
 IDE is under constructed
 
-javac demo.java -h 输出头文件 *.h
+javac demo.class -h 输出头文件 *.h
 
 static {
   system.loadlibrary("*.dll");
 }
 准备写java native与C/C++之间的联系，建立agent
 试图调用JVM的信息，获得控制
-
