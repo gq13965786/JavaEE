@@ -3,7 +3,7 @@ package com.qguo.test;
 import org.omg.SendingContext.RunTime;
 
 public class Test {
-	public native static void hellnative();
+	public native static void hellonative();
 	
 	//static {
 	//	system.loadlibrary("*.dll");
@@ -22,6 +22,7 @@ public class Test {
 
 		int number = Runtime.getRuntime().availableProcessors();
 		System.out.println(number);
+		hellonative();
 	}
 	
 
