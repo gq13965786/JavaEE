@@ -2,7 +2,6 @@ package com.datan.core;
 
 import java.security.*;
 import java.util.ArrayList;
-
 import com.datan.util.StringUtil;
 
 public class Transaction {
@@ -35,5 +34,13 @@ public class Transaction {
 				);
 	}
 	// signs all the data we dont wish to be tampered with
-	public void generateSignature(PrivateKey privateKey)
+	public void generateSignature(PrivateKey privateKey) {
+		String data = StringUtil.getStringFromKey(sender) + StringUtil.getStringFromKey(receiver) + Float.toString(value);
+		signature = StringUtil.applyECDSASig(privateKey, data);
+	}
+	// verifies the data we signed hasnt been tampered with
+	public boolean verifySignature() {
+		String data = StringUtil.getStringFromKey(sender) + StringUtil.getStringFromKey(receiver) + Float.toString(value);
+		return StringUtil.verifyECDSASig(sender, data, signature);
+	}
 }
