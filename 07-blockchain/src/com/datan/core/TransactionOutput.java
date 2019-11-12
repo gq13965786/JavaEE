@@ -22,4 +22,5 @@ public class TransactionOutput {
 	public boolean isMine(PublicKey publicKey) {
 		return (publicKey == receiver);
 	}
+	
 }
