@@ -68,8 +68,21 @@ public class StringUtil {
 			previousTreeLayer.add(transaction.transactionId);
 		}
 		ArrayList<String> treeLayer = previousTreeLayer;
-		while(count >)
-		return null;
+		while(count > 1) {
+			treeLayer = new ArrayList<String>();
+			for( int i=1; i < previousTreeLayer.size(); i++) {
+				treeLayer.add(applySha256(previousTreeLayer.get(i-1) + previousTreeLayer.get(i)));
+			}
+			count = treeLayer.size();
+			previousTreeLayer = treeLayer;
+		}
+		String merkleRoot = (treeLayer.size() == 1) ? treeLayer.get(0) : "";
+		// not "" later
+		return merkleRoot;
+	}
+
+	public static String getDifficultyString(int difficulty) {
+		return new String(new char[difficulty]).replace('\0', '0');
 	}
 }
 
