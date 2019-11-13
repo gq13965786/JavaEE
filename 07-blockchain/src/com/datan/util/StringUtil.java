@@ -5,7 +5,10 @@ import java.security.MessageDigest;
 import java.security.PrivateKey;
 import java.security.PublicKey;
 import java.security.Signature;
+import java.util.ArrayList;
 import java.util.Base64;
+
+import com.datan.core.Transaction;
 
 public class StringUtil {
 	
@@ -53,8 +56,20 @@ public class StringUtil {
 			throw new RuntimeException(e);
 		}
 	}
+	
 	public static String getStringFromKey(Key key) {
 		return Base64.getEncoder().encodeToString(key.getEncoded());
+	}
+	
+	public static String getMerkleRoot(ArrayList<Transaction> transactions) {
+		int count = transactions.size();
+		ArrayList<String> previousTreeLayer = new ArrayList<String>();
+		for( Transaction transaction : transactions) {
+			previousTreeLayer.add(transaction.transactionId);
+		}
+		ArrayList<String> treeLayer = previousTreeLayer;
+		while(count >)
+		return null;
 	}
 }
 

@@ -4,6 +4,7 @@ import java.util.Date;
 
 import com.datan.util.StringUtil;
 
+// simply refer to info from blockexplorer.com
 public class Block {
 	
 	public String hash;
