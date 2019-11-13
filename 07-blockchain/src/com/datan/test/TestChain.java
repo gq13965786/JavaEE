@@ -3,8 +3,11 @@ package com.datan.test;
 import java.security.Security;
 import java.util.ArrayList;
 import java.util.Base64;
+import java.util.HashMap;
+
 import com.datan.core.Block;
 import com.datan.core.Transaction;
+import com.datan.core.TransactionOutput;
 import com.datan.core.Wallet;
 import com.datan.util.StringUtil;
 import com.google.gson.GsonBuilder;
@@ -12,9 +15,12 @@ import com.google.gson.GsonBuilder;
 
 
 
-public class Test {
-//noobChain
+public class TestChain {
+//noobChain, no applicable in real world, is purpose to demo 
 	public static ArrayList<Block> blockchain = new ArrayList<Block>();
+	public static HashMap<String, TransactionOutput> UTXOs = new HashMap<String, TransactionOutput>();
+	
+	public final static float minimumTransaction = 0.1f;
 	public static int difficulty = 5;
 	public static Wallet walletA;
 	public static Wallet walletB;
@@ -64,4 +70,5 @@ public class Test {
 		}
 		return true;
 	}
+
 }
