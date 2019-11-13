@@ -1,11 +1,16 @@
 package com.datan.core;
 import java.security.*;
 import java.security.spec.ECGenParameterSpec;
+import java.util.HashMap;
+import java.util.Map;
+
+import com.datan.test.TestChain;
 
 public class Wallet {
 	public PrivateKey privateKey;
 	public PublicKey publicKey;
 	
+	public HashMap<String, TransactionOutput> UTXOs = new HashMap<String, TransactionOutput>();
 	//constructor
 	public Wallet() {
 		generateKeyPair();
@@ -25,6 +30,23 @@ public class Wallet {
 		} catch(Exception e) {
 			throw new RuntimeException(e);
 		}
+	}
+	
+	// returns balance and stores the UTXO's owned by this wallet in this OTXOs
+	public float getBalance() {
+		float total = 0;
+		for( Map.Entry<String, TransactionOutput> item: TestChain.UTXOs.entrySet()) {
+			
+		}
+		return total;
+	}
+	// generates and returns a new transaction from this wallet
+	public Transaction sendFunds(PublicKey _receiver, float value) {
 		
+		
+		
+		
+		Transaction newTransaction = new Transaction(publicKey, _receiver, value, inputs);
+		return newTransaction;
 	}
 }

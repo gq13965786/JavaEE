@@ -83,13 +83,20 @@ public class Transaction {
 	}
 	// returns sum of inputs(UTXOs) values
 	public float getInputsValue() {
-		// TODO Auto-generated method stub
-		return 0;
+		float total = 0;
+		for( TransactionInput i : inputs) {
+			if(i.UTXO == null) continue;
+			total += i.UTXO.value;
+		}
+		return total;
 	}
 	// returns sum of outputs:
 	public float getOutputsValue() {
-		
-		return 0;
+		float total = 0;
+		for( TransactionOutput o : outputs) {
+			total += o.value;
+		}
+		return total;
 	}
 	
 }
